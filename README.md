@@ -1,5 +1,6 @@
 <h1 align="center">
-dev.finance💲 - 1ª Maratona Discover Rocketseat</h1>
+dev.finance💲</h1>
+<h3 align="center"> 1ª Maratona Discover Rocketseat </h3>
 <img src=".github/wallpaper.png" alt="Wallpaper Maratona Discover">
 
 ### :mag: Sobre o projeto 
