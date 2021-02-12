@@ -1,7 +1,7 @@
 <h1 align="center">
 dev.finance💲</h1>
 <h3 align="center"> 1ª Maratona Discover Rocketseat </h3>
-<img src=".github/wallpaper.png" alt="Wallpaper Maratona Discover">
+<img src=".github/dev-finance.gif" alt="Application gif">
 
 ### :mag: Sobre o projeto 
 
