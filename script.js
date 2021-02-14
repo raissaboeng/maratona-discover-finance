@@ -11,6 +11,21 @@ const Modal = {
     }
 }
 
+const ModalLoading = {
+    open(){
+        //Abrir modal
+        //Adicionar a class active ao modal
+        console.log('ativo')
+        document.querySelector('.modal-loading').classList.add('active');
+    },
+    close(){
+        //fechar o Modal
+        //remover a class active do modal
+        console.log('fechando')
+        document.querySelector('.modal-loading').classList.remove('active');
+    }
+}
+
 const Storage = {
     get() {
         return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
@@ -207,6 +222,9 @@ const Form = {
 
 const App = {
     init() {
+
+        setTimeout (function () {ModalLoading.close();}, 10000);
+
         Transaction.all.forEach((transaction, index) => {
             DOM.addTransaction(transaction, index)
         })
