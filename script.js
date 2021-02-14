@@ -5,6 +5,8 @@ const Modal = {
         document.querySelector('.modal-overlay').classList.add('active');
     },
     close(){
+        //retirar o status ativo do alert para campos vazios caso tenha
+        document.querySelector('.alert').classList.remove('active');
         //fechar o Modal
         //remover a class active do modal
         document.querySelector('.modal-overlay').classList.remove('active');
@@ -12,11 +14,8 @@ const Modal = {
 }
 
 const ModalLoading = {
-    open(){
-        //Abrir modal
-        //Adicionar a class active ao modal
-        console.log('ativo')
-        document.querySelector('.modal-loading').classList.add('active');
+    init() {
+        setTimeout (function () {ModalLoading.close();}, 5000);
     },
     close(){
         //fechar o Modal
@@ -213,7 +212,7 @@ const Form = {
             //modal fechar
             Modal.close()
         }catch(error){
-            alert(error.message)
+            document.querySelector('.alert').classList.add('active');
         }
 
 
@@ -222,12 +221,20 @@ const Form = {
 
 const App = {
     init() {
+        
+        ModalLoading.init()
 
-        setTimeout (function () {ModalLoading.close();}, 10000);
+        if(Transaction.all.length == 0){
+            document.querySelector('.empty').classList.add('active');
+        }else{
+            document.querySelector('.empty').classList.remove('active');
 
-        Transaction.all.forEach((transaction, index) => {
-            DOM.addTransaction(transaction, index)
-        })
+            Transaction.all.forEach((transaction, index) => {
+                DOM.addTransaction(transaction, index)
+            })
+        }
+
+       
 
         DOM.updateBalance()
 
