@@ -2,7 +2,7 @@
 <h3 align="center"> 1ª Maratona Discover Rocketseat </h3>
 
 ### ✨ Projeto modificado
-<img src=".github/new-dev-finance" alt="Update Application gif">
+<img src=".github/new-dev-finance.gif" alt="Update Application gif">
 
 ---
 
