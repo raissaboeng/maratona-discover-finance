@@ -31,7 +31,7 @@ Acesse a pasta do projeto em seu computador e execute o arquivo index.html no na
 - [x] Criação de uma tela de carregamento;
 - [x] Frase de aviso no modal quando algum campo do formulário de nova transação estiver vazio;
 - [x] Exibir um ícone quando não houver nenhuma transação;
-- [ ] Dark Mode;
-- [ ] Substituir as funções de adicionar e remover classes por um toogle;
+- [x] Dark Mode;
+- [x] Substituir as funções de adicionar e remover classes por um toogle quando possível;
 
 <p align="center">Com 💜 por Raissa Boeng</p>

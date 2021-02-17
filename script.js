@@ -1,34 +1,24 @@
 /*dark mode -------------- */
-const checkbox = document.getElementById('checkbox');
-        checkbox.addEventListener('change', () => {
-            //change the theme of the website
-            document.querySelector('header').classList.toggle('dark');
-            document.body.classList.toggle('dark');
-            })
+const checkbox = document.getElementById('checkbox')
+checkbox.addEventListener('change', () => {
+    //change the theme of the website
+    document.querySelector(':root').classList.toggle('dark')
+})
 
 const Modal = {
-    open(){
-        //Abrir modal
-        //Adicionar a class active ao modal
-        document.querySelector('.modal-overlay').classList.add('active');
-    },
-    close(){
-        //retirar o status ativo do alert para campos vazios caso tenha
-        document.querySelector('.alert').classList.remove('active');
-        //fechar o Modal
-        //remover a class active do modal
-        document.querySelector('.modal-overlay').classList.remove('active');
+    toggle() {
+        //retirar o status ativo do alert para campos vazios caso tenha antes de abrir ou de fechar o modal
+        document.querySelector('.alert').classList.remove('active')
+        //limpar os campos caso não tenha enviado o formulario e apenas cancelando fechando o modal
+        Form.clearFields()
+        //adicionar ou remover a class active do modal
+        document.querySelector('.modal-overlay').classList.toggle('active')
     }
 }
 
 const ModalLoading = {
-    init() {
-        setTimeout (function () {ModalLoading.close();}, 5000);
-    },
-    close(){
-        //fechar o Modal
-        //remover a class active do modal
-        document.querySelector('.modal-loading').classList.remove('active');
+    init(){
+        setTimeout (function () {document.querySelector('.modal-loading').classList.remove('active')}, 5000)
     }
 }
 
@@ -64,24 +54,24 @@ const Transaction = {
             //se ela for maior que zero
             if(transaction.amount > 0){
                 //somar a uma variável e retorná-la
-                income += transaction.amount;
+                income += transaction.amount
             }
         })
-        return income;
+        return income
     },
 
     expenses() {
         let expense = 0;
         Transaction.all.forEach(transaction => {
             if(transaction.amount < 0){
-                expense += transaction.amount;
+                expense += transaction.amount
             }
         })
-        return expense;
+        return expense
     },
 
     total() {
-        return  Transaction.incomes() + Transaction.expenses();
+        return  Transaction.incomes() + Transaction.expenses()
     }
 }
 
@@ -216,39 +206,34 @@ const Form = {
             Transaction.add(newTransaction)
             //apagar os dados do formulario
             Form.clearFields()
-            //modal fechar
-            Modal.close()
+            //fechar o modal
+            Modal.toggle()
         }catch(error){
-            document.querySelector('.alert').classList.add('active');
+            document.querySelector('.alert').classList.add('active')
         }
-
-
     }
 }
 
+
 const App = {
     init() {
-        
+        //inicia a tela de carregamento
         ModalLoading.init()
-
-        if(Transaction.all.length == 0){
-            document.querySelector('.empty').classList.add('active');
-        }else{
-            document.querySelector('.empty').classList.remove('active');
-
-            Transaction.all.forEach((transaction, index) => {
-                DOM.addTransaction(transaction, index)
-            })
-        }
-
-       
-
+        //verifica se possui transações para exibir, se não houver, exibe icone de vazio
+        Transaction.all.length == 0 ? document.querySelector('.empty').classList.add('active') : document.querySelector('.empty').classList.remove('active')
+        //Passa por todo array de transações para adicionar na tela
+        Transaction.all.forEach((transaction, index) => {
+            DOM.addTransaction(transaction, index)
+        })
+        //a cada adição de transação, refaz a conta do balanço total
         DOM.updateBalance()
-
+        //guarda todas as transações no localStorage
         Storage.set(Transaction.all)
     },
     reload() {
+        //Limpa o array de transações
         DOM.clearTransactions()
+        //Refaz todo o processamento**pode ser melhorado
         App.init()
     }
 }

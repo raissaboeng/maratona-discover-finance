@@ -58,7 +58,7 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+            <a href="#" onclick="Modal.toggle()" class="button new">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -101,7 +101,7 @@
                         <input id="amount" name="amount" type="number" 
                         step="0.01"
                         placeholder="0,00"/>
-                        <small class="help">Use o sinal (-) para despesase , (vírgula) para casas decimais </small>
+                        <small class="help">Use o sinal (-) para despesas e , (vírgula) para casas decimais </small>
                     </div>
 
                     <div class="input-group">
@@ -115,7 +115,7 @@
                         
                     <div class="input-group actions">
                         <a href="#" 
-                        onclick="Modal.close()" class="button cancel">Cancelar</a>
+                        onclick="Modal.toggle()" class="button cancel">Cancelar</a>
                         <button >Salvar</button>
                     </div>
                 </form>
