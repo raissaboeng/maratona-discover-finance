@@ -1,6 +1,12 @@
-<h1 align="center">
-dev.finance💲</h1>
+<h1 align="center">dev.finance💲</h1>
 <h3 align="center"> 1ª Maratona Discover Rocketseat </h3>
+
+### ✨ Projeto modificado
+<img src=".github/new-dev-finance" alt="Update Application gif">
+
+---
+
+### 🖼️ Projeto original
 <img src=".github/dev-finance.gif" alt="Application gif">
 
 ### :mag: Sobre o projeto 
@@ -13,6 +19,19 @@ O dev.finance$ é uma aplicação web desenvolvida para fazer o controle de fina
 * CSS
 * JavaScript
 
----
+### :key: Executar a aplicação
+
+Clone este repositório
+$ git clone https://github.com/raissaboeng/maratona-discover-finance.git
+
+Acesse a pasta do projeto em seu computador e execute o arquivo index.html no navegador.
+
+### :bulb: Melhorias
+- [x] Alteração das cores do projeto;
+- [x] Criação de uma tela de carregamento;
+- [x] Frase de aviso no modal quando algum campo do formulário de nova transação estiver vazio;
+- [x] Exibir um ícone quando não houver nenhuma transação;
+- [ ] Dark Mode;
+- [ ] Substituir as funções de adicionar e remover classes por um toogle;
 
 <p align="center">Com 💜 por Raissa Boeng</p>
