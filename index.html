@@ -14,10 +14,19 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <img src="./assets/logo.svg" alt="Logo Dev Finance">
         <p>Deixe seu dinheiro trabalhar para você!</p>
     </header>
+
+    <div class="button-dark-mode">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label" title="Modo Noturno">
+            <img src="./assets/moon.svg" alt="moon" class="moon">
+            <img src="./assets/sun.svg" alt="sun" class="sun">
+            <div class="ball"></div>
+        </label>
+    </div>
 
     <main class="container">
         <section id="balance">
@@ -68,7 +77,7 @@
             </table>
 
             <div class="empty">
-                <img src="./assets/broke.svg" alt="empty">
+                <img src="./assets/broke.svg" alt="empty" class="icon-broke">
             </div>
         </section>
     </main>

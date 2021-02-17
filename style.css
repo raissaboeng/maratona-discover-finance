@@ -6,6 +6,9 @@
     --green: #49AA26;
     --light-green: #3dd705;
     --background: #30705f;
+    --header-dark: #292C35;
+    --body: #f0f2f5;
+    --body-dark: #e9e9e9;
 }
 
 * {
@@ -19,8 +22,12 @@ html {
 }
 
 body {
-    background: #f0f2f5;
+    background: var(--body);
     font-family: 'Poppins', sans-serif;
+}
+
+body.dark{
+    background: var(--body-dark);
 }
 
 .sr-only {
@@ -111,6 +118,10 @@ header {
     border-radius: 0 0 2% 2%;
 }
 
+header.dark {
+    background: var(--header-dark);
+}
+
 
 #logo {
     color: #fff;
@@ -121,6 +132,50 @@ header p {
     color: #fff;
     font-weight: 100;
     font-size: 1.2rem;
+}
+
+/* Button dark mode -----------*/
+.button-dark-mode {
+    position: absolute;
+    top: 20px;
+    right: 20px;}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    width: 50px;
+    height: 26px;
+    position:relative;
+    transform: scale(1.2);
+}
+
+.moon, .sun{
+    width:18px;
+    height:18px;
+}
+
+.ball {
+    height: 22px;
+    width: 22px;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
 }
 
 /* Balance ---------------------*/
@@ -238,6 +293,11 @@ td.expense {
     height: 20vh;
 }
 
+.empty.dark img{
+    opacity: 0.8;
+    filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg) brightness(3);
+}
+
 .empty.active {
     opacity: 1;
     visibility: visible;
@@ -345,6 +405,10 @@ input {
     visibility: hidden;
 
     z-index: 999;
+}
+
+.modal-loading.dark {
+    background-color: var(--header-dark);
 }
 
 .modal-loading.active {

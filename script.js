@@ -1,3 +1,11 @@
+/*dark mode -------------- */
+const checkbox = document.getElementById('checkbox');
+        checkbox.addEventListener('change', () => {
+            //change the theme of the website
+            document.querySelector('header').classList.toggle('dark');
+            document.body.classList.toggle('dark');
+            })
+
 const Modal = {
     open(){
         //Abrir modal
@@ -20,7 +28,6 @@ const ModalLoading = {
     close(){
         //fechar o Modal
         //remover a class active do modal
-        console.log('fechando')
         document.querySelector('.modal-loading').classList.remove('active');
     }
 }
